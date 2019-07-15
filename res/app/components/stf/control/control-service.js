@@ -293,6 +293,13 @@ module.exports = function ControlServiceFactory(
       return sendTwoWay('wifi.get')
     }
 
+    this.doRestore = function(serial, path) {
+      return sendTwoWay('adb.restore', {
+        serial: serial,
+        path: path
+      })
+    }
+
     window.cc = this
   }
 
